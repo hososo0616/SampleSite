@@ -1,4 +1,86 @@
 @charset "UTF-8";
+.appear.up .item {
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+}
+
+.appear.down .item {
+  -webkit-transform: translateY(-6px);
+          transform: translateY(-6px);
+}
+
+.appear.left .item {
+  -webkit-transform: translateX(40px);
+          transform: translateX(40px);
+}
+
+.appear.right .item {
+  -webkit-transform: translateX(-40px);
+          transform: translateX(-40px);
+}
+
+.appear .item {
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+  opacity: 0;
+}
+
+.appear.inview .item {
+  opacity: 1;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.appear.inview .item:nth-child(1) {
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+.appear.inview .item:nth-child(2) {
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+.appear.inview .item:nth-child(3) {
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.appear.inview .item:nth-child(4) {
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+
+.appear.inview .item:nth-child(5) {
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+.appear.inview .item:nth-child(6) {
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
+}
+
+.appear.inview .item:nth-child(7) {
+  -webkit-transition-delay: 0.7s;
+          transition-delay: 0.7s;
+}
+
+.appear.inview .item:nth-child(8) {
+  -webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
+}
+
+.appear.inview .item:nth-child(9) {
+  -webkit-transition-delay: 0.9s;
+          transition-delay: 0.9s;
+}
+
+.appear.inview .item:nth-child(10) {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+
 .swiper-container {
   overflow: visible !important;
 }
@@ -45,6 +127,7 @@
 
 .hero {
   overflow: hidden;
+  padding-top: 100px;
 }
 
 .hero__title {
@@ -531,7 +614,7 @@
 }
 
 .bg-img-zoom {
-  background-image: url(images/image-1.jpg);
+  background-image: url(/images/image-1.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -925,7 +1008,7 @@ img {
   margin-bottom: 16px !important;
 }
 
-.mb-lg {
+.mb-lg, .travel, .houses, .houses__btn {
   margin-bottom: 80px !important;
 }
 
@@ -933,7 +1016,7 @@ img {
   margin-bottom: 16px !important;
 }
 
-.pb-lg {
+.pb-lg, .hero {
   margin-bottom: 80px !important;
 }
 
@@ -996,11 +1079,6 @@ img {
           transform-origin: right;
 }
 
-.travel__title.inview::before {
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-
 .travel__img {
   height: 300px;
   -webkit-transition: -webkit-box-shadow 1ms linear 0.8s;
@@ -1023,12 +1101,13 @@ img {
           box-shadow: inset 0 0 30px black;
 }
 
-.purple {
-  color: rebeccapurple;
+.travel__txt.inview .travel_title::before {
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
-#content {
-  padding-top: 100px;
+.purple {
+  color: rebeccapurple;
 }
 
 #container {
@@ -1226,17 +1305,23 @@ main {
   top: 70%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 
-.side a,
-.side span {
+.side .tween-animate-title {
   color: black;
   text-decoration: none;
   margin: 0 40px;
   vertical-align: middle;
+  letter-spacing: 2px;
 }
 
 .side.left {
+  left: -50px;
+}
+
+.side.left.inview {
   left: 50px;
 }
 
@@ -1248,7 +1333,11 @@ main {
 }
 
 .side.right {
-  right: 50px;
+  right: -50px;
+}
+
+.side.right.inview {
+  left: 50px;
 }
 
 .side.right .side__inner {
@@ -1365,10 +1454,10 @@ Stylesheet: 960px以上のモニタで適用
   .font-lg, .main-title {
     font-size: 36px;
   }
-  .mb-lg {
+  .mb-lg, .travel, .houses, .houses__btn {
     margin-bottom: 150px !important;
   }
-  .pb-lg {
+  .pb-lg, .hero {
     margin-bottom: 150px !important;
   }
   .places__item {
@@ -1392,6 +1481,10 @@ Stylesheet: 960px以上のモニタで適用
   }
   .mobile-menu__btn {
     display: none;
+  }
+  .swiper-slide {
+    -webkit-box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
   }
 }
 
